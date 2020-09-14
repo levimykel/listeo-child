@@ -9,3 +9,31 @@
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  listeochild
 */
+
+.listing-item-container {
+  height: initial;
+}
+
+/* .listing-item-container.list-layout .listing-item {
+  height: initial;
+} */
+
+/* .listing-item-container.list-layout .listing-item-image {
+  max-width: 300px;
+  height: initial;
+} */
+
+/* .listing-item-container.list-layout .listing-item-inner {
+  position: initial;
+  top: initial;
+  left: initial;
+  padding: 20px;
+  padding-right: 120px;
+  transform: none;
+} */
+
+.listing-item-container.list-layout .listing-item-inner h4 {
+  margin: 16px 0 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
