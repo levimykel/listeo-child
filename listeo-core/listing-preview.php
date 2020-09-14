@@ -71,6 +71,7 @@
 				<?php 
 				endif;
 				?>
+				<li><a href="#itinerary"><?php esc_html_e('Itinerary','listeo_core'); ?></a></li>
 				<li><a href="#sustainability"><?php esc_html_e('Sustainability','listeo_core'); ?></a></li>
 			</ul>
 		</div>
@@ -99,6 +100,7 @@
 		<?php $template_loader->get_template_part( 'single-partials/single-listing','opening' );  ?>
 		<?php $template_loader->get_template_part( 'single-partials/single-listing','video' );  ?>
 		<?php $template_loader->get_template_part( 'single-partials/single-listing','location' );  ?>
+		<?php $template_loader->get_template_part( 'single-partials/single-listing','itinerary' );  ?>
 		<?php $template_loader->get_template_part( 'single-partials/single-listing','sustainability' );  ?>
 		
 	</div>

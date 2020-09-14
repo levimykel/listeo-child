@@ -111,10 +111,10 @@ else: ?>
 					 	if ( $type_terms && ! is_wp_error( $type_terms ) ) : 
 					    $categories = array();
 					    foreach ( $type_terms as $term ) {
-					        $categories[] = sprintf( '<a href="%1$s">%2$s</a>',
-                    			esc_url( get_term_link( $term->slug, $taxonomy_name ) ),
-                    			esc_html( $term->name )
-                			);
+								$categories[] = sprintf( '<a href="%1$s">%2$s</a>',
+									esc_url( get_term_link( $term->slug, $taxonomy_name ) ),
+									esc_html( $term->name )
+								);
 					    }
 
 					    $categories_list = join( ", ", $categories );
@@ -193,6 +193,7 @@ else: ?>
 					<?php 
           endif;
           ?>
+          <li><a href="#itinerary"><?php esc_html_e('Itinerary','listeo_core'); ?></a></li>
           <li><a href="#sustainability"><?php esc_html_e('Sustainability','listeo_core'); ?></a></li>
           <?php
 					if(!get_option('listeo_disable_reviews')){
@@ -218,12 +219,12 @@ else: ?>
 					<?php } ?>
 				</ul>
 			</div>
-<?php 
 
+			<?php 
+				// $d = DateTime::createFromFormat('d-m-Y', $expires);
+				// echo $d->getTimestamp(); 
+			?>
 
-// 		$d = DateTime::createFromFormat('d-m-Y', $expires);
-// 		echo $d->getTimestamp(); 
-		?>
 			<!-- Overview -->
 			<div id="listing-overview" class="listing-section">
 				<?php $template_loader->get_template_part( 'single-partials/single-listing','main-details' );  ?>
@@ -242,6 +243,7 @@ else: ?>
 			<?php $template_loader->get_template_part( 'single-partials/single-listing','opening' );  ?>
 			<?php $template_loader->get_template_part( 'single-partials/single-listing','video' );  ?>
 			<?php $template_loader->get_template_part( 'single-partials/single-listing','location' );  ?>
+			<?php $template_loader->get_template_part( 'single-partials/single-listing','itinerary' );  ?>
 			<?php $template_loader->get_template_part( 'single-partials/single-listing','sustainability' );  ?>
 			<?php if(!get_option('listeo_disable_reviews')){ 
 				$template_loader->get_template_part( 'single-partials/single-listing','reviews' ); } ?>
