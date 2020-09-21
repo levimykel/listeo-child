@@ -95,7 +95,7 @@ $listing_type = get_post_meta( $post->ID,'_listing_type',true );
 								<?php  
 								if( $listing_type  == 'event') { 
 										$date_format = listeo_date_time_wp_format_php();
-										$_event_datetime = get_post_meta($post->ID,'_event_date', true); 
+										$_event_datetime = get_post_meta($post->ID,'_trip_start_date', true);
 
 										if($_event_datetime) {
 											$_event_date = list($_event_datetime) = explode(' ', $_event_datetime);
