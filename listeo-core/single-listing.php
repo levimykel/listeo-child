@@ -101,6 +101,8 @@ else: ?>
 					 	case 'event':
 					 		$type_terms = get_the_terms( get_the_ID(), 'event_category' );
 					 		$taxonomy_name = 'event_category';
+					 		$type_terms2 = get_the_terms( get_the_ID(), 'service_category' );
+					 		$taxonomy_name2 = 'service_category';
 					 		break;
 					 	
 					 	default:
@@ -125,6 +127,26 @@ else: ?>
 						<?php endif;
 					 }
 					 ?>
+
+					 <?php
+							if( isset($type_terms2) ) {
+								if ( $type_terms2 && ! is_wp_error( $type_terms2 ) ) : 
+								$categories = array();
+								foreach ( $type_terms2 as $term ) {
+									$categories[] = sprintf( '<a href="%1$s">%2$s</a>',
+										esc_url( get_term_link( $term->slug, $taxonomy_name2 ) ),
+										esc_html( $term->name )
+									);
+								}
+								$categories_list = join( ", ", $categories );
+								?>
+								<span class="listing-tag">
+										<?php  echo ( $categories_list ) ?>
+								</span>
+							<?php endif;
+							}
+					 ?>
+
 					</h2>
 					<?php if(get_the_listing_address()): ?>
 						<span>
