@@ -78,7 +78,7 @@ if(isset($_menu[0]['menu_elements'][0]['name']) && !empty($_menu[0]['menu_elemen
 	<?php if($counter>5): ?></div>
 	<a href="#" class="show-more-button" data-more-title="<?php esc_html_e('Show More','listeo_core') ?>" data-less-title="<?php esc_html_e('Show Less','listeo_core') ?>"><i class="fa fa-angle-down"></i></a><?php endif; ?>
 
-  <?php if(!empty($inclusions_exclusions)): ?>
+  <?php if(!empty($inclusions_exclusions) && !empty($inclusions_exclusions[0])): ?>
     <div class="margin-top-30" style="text-align: center;">
       <a href=<?php echo $inclusions_exclusions[0] ?> class="button" target="_blank">Download full list of price inclusions & exclusions</a>
     </div>

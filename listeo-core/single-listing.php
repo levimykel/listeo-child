@@ -9,6 +9,9 @@ get_header(get_option('header_bar_style','standard') );
 $layout = get_option('listeo_single_layout','right-sidebar');
 $mobile_layout = get_option('listeo_single_mobile_layout','right-sidebar');
 
+$custom_fields = Listeo_Core_Meta_Boxes::meta_boxes_custom();
+$detailed_itinerary = get_post_meta($post->ID, '_detailed_itinerary', false);
+
 $gallery_style = get_post_meta( $post->ID, '_gallery_style', true );
 
 if(empty($gallery_style)) { $gallery_style = get_option('listeo_gallery_type','top'); }
@@ -254,6 +257,19 @@ else: ?>
 				<!-- Description -->
 	
 				<?php the_content(); ?>
+
+				<?php 
+					// echo "<pre>";
+					// var_dump(empty($detailed_itinerary[0]));
+					// echo "</pre>";
+				?>
+
+				<?php if(!empty($detailed_itinerary) && !empty($detailed_itinerary[0])): ?>
+					<div class="margin-top-30" style="text-align: center;">
+						<a href=<?php echo $detailed_itinerary[0] ?> class="button" target="_blank">Download detailed itinerary & FAQ</a>
+					</div>
+				<?php endif; ?>
+
 				<?php $template_loader->get_template_part( 'single-partials/single-listing','socials' );  ?>
 				<?php $template_loader->get_template_part( 'single-partials/single-listing','features' );  ?>
 			</div>
