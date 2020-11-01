@@ -69,93 +69,21 @@ else: ?>
 			<!-- Titlebar -->
 			<div id="titlebar" class="listing-titlebar">
 				<div class="listing-titlebar-title">
-					<h2><?php the_title(); ?>
-					<?php
-					$terms = get_the_terms( get_the_ID(), 'listing_category' );
-					if ( $terms && ! is_wp_error( $terms ) ) : 
-					    $categories = array();
-					    foreach ( $terms as $term ) {
-					        
-					        $categories[] = sprintf( '<a href="%1$s">%2$s</a>',
-                    			esc_url( get_term_link( $term->slug, 'listing_category' ) ),
-                    			esc_html( $term->name )
-                			);
-					    }
-
-					    $categories_list = join( ", ", $categories );
-					    ?>
-					    <span class="listing-tag">
-					        <?php  echo ( $categories_list ) ?>
-					    </span>
-					<?php endif; ?>
-					<?php $listing_type = get_post_meta( get_the_ID(), '_listing_type', true);
-					switch ($listing_type) {
-					 	case 'service':
-					 		$type_terms = get_the_terms( get_the_ID(), 'service_category' );
-					 		$taxonomy_name = 'service_category';
-					 		break;
-					 	case 'rental':
-					 		$type_terms = get_the_terms( get_the_ID(), 'rental_category' );
-					 		$taxonomy_name = 'rental_category';
-					 		break;
-					 	case 'event':
-					 		$type_terms = get_the_terms( get_the_ID(), 'event_category' );
-					 		$taxonomy_name = 'event_category';
-					 		$type_terms2 = get_the_terms( get_the_ID(), 'service_category' );
-					 		$taxonomy_name2 = 'service_category';
-					 		break;
-					 	
-					 	default:
-					 		# code...
-					 		break;
-					 } 
-					 if( isset($type_terms) ) {
-					 	if ( $type_terms && ! is_wp_error( $type_terms ) ) : 
-					    $categories = array();
-					    foreach ( $type_terms as $term ) {
-								$categories[] = sprintf( '<a href="%1$s">%2$s</a>',
-									esc_url( get_term_link( $term->slug, $taxonomy_name ) ),
-									esc_html( $term->name )
-								);
-					    }
-
-					    $categories_list = join( ", ", $categories );
-					    ?>
-					    <span class="listing-tag">
-					        <?php  echo ( $categories_list ) ?>
-					    </span>
-						<?php endif;
-					 }
-					 ?>
-
-					 <?php
-							if( isset($type_terms2) ) {
-								if ( $type_terms2 && ! is_wp_error( $type_terms2 ) ) : 
-								$categories = array();
-								foreach ( $type_terms2 as $term ) {
-									$categories[] = sprintf( '<a href="%1$s">%2$s</a>',
-										esc_url( get_term_link( $term->slug, $taxonomy_name2 ) ),
-										esc_html( $term->name )
-									);
-								}
-								$categories_list = join( ", ", $categories );
-								?>
-								<span class="listing-tag">
-										<?php  echo ( $categories_list ) ?>
-								</span>
-							<?php endif;
-							}
-					 ?>
-
+					<h2>
+						<?php the_title(); ?>
+						<?php if(get_the_listing_address()): ?>
+							<span>
+								<a href="#listing-location" class="listing-address">
+									<i class="fa fa-map-marker"></i>
+									<?php the_listing_address(); ?>
+								</a>
+							</span>
+						<?php endif; ?>
 					</h2>
-					<?php if(get_the_listing_address()): ?>
-						<span>
-							<a href="#listing-location" class="listing-address">
-								<i class="fa fa-map-marker"></i>
-								<?php the_listing_address(); ?>
-							</a>
-						</span>
-					<?php endif; ?>
+
+					<?php $template_loader->get_template_part( 'single-partials/single-listing','main-details' );  ?>
+					<?php $template_loader->get_template_part( 'single-partials/single-listing','category-bubbles' );  ?>
+
 					<?php
 				if(!get_option('listeo_disable_reviews')){
 					 $rating = get_post_meta($post->ID, 'listeo-avg-rating', true); 
@@ -249,7 +177,6 @@ else: ?>
 
 			<!-- Overview -->
 			<div id="listing-overview" class="listing-section">
-				<?php $template_loader->get_template_part( 'single-partials/single-listing','main-details' );  ?>
 				
 				<!-- Description -->
 	

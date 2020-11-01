@@ -4,33 +4,18 @@
  Author:       Levi Gable
  Author URI:   https://github.com/levimykel
  Template:     listeo
- Version:      1.0.6
+ Version:      1.0.7
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  listeochild
 */
 
+/*
+ * Trip list
+ */
 .listing-item-container {
   height: initial;
 }
-
-/* .listing-item-container.list-layout .listing-item {
-  height: initial;
-} */
-
-/* .listing-item-container.list-layout .listing-item-image {
-  max-width: 300px;
-  height: initial;
-} */
-
-/* .listing-item-container.list-layout .listing-item-inner {
-  position: initial;
-  top: initial;
-  left: initial;
-  padding: 20px;
-  padding-right: 120px;
-  transform: none;
-} */
 
 .listing-item-container.list-layout .listing-item-inner h4 {
   margin: 16px 0 0;
@@ -39,7 +24,62 @@
 }
 
 
-/***** Footer styles *****/
+/*
+ * Listing page
+ */
+.listing-titlebar-title .listing-address {
+  margin-left: 10px;
+}
+
+.apartment-details {
+  margin: 5px 0 20px;
+}
+
+.apartment-details,
+.apartment-details span {
+  font-size: 12px !important;
+}
+
+#titlebar.listing-titlebar .category-bubbles {
+  margin: 10px 0;
+}
+
+#titlebar.listing-titlebar .category-bubbles .bubble-name {
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+#titlebar.listing-titlebar span.listing-tag {
+  top: 0;
+  margin-left: 0;
+  margin-right: 5px;
+  padding: 5px 12px;
+}
+#titlebar.listing-titlebar span.listing-tag:last-of-type {
+  margin-right: 0;
+}
+
+#titlebar.listing-titlebar span.listing-tag a {
+  font-size: 9px;
+  line-height: 12px;
+}
+
+
+/*
+ * Footer Pages
+ */
+.bg-page-article .boldgrid-section .bg-editor-hr-wrap .bg-hr {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.bg-blockquote::before {
+  content: none;
+}
+
+
+/*
+ * Footer
+ */
 body #footer {
   padding-top: 50px;
 }
