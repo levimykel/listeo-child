@@ -4,11 +4,110 @@
  Author:       Levi Gable
  Author URI:   https://github.com/levimykel
  Template:     listeo
- Version:      1.0.7
+ Version:      1.0.8
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  listeochild
 */
+
+
+/*
+ * WP Admin Bar
+ */
+.mm-wrapper_opened #wpadminbar {
+  top: -32px;
+}
+
+@media screen and (max-width: 782px) {
+  .mm-wrapper_opened #wpadminbar {
+    top: -46px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #wpadminbar {
+    position: fixed;
+  }
+}
+
+
+/*
+ * Heading & top navigation
+ */
+@media (max-width: 1239px) and (min-width: 1025px) {
+  .left-side {
+    width: 65%;
+  }
+  .right-side {
+    margin-top: 0;
+  }
+
+  #navigation.style-1 {
+    margin: 4px 0 0;
+    width: auto;
+    padding-top: 0;
+  }
+  #navigation.style-1:before {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  #header > .container {
+    position: relative;
+  }
+
+  #header-container.header-style-2 .right-side,
+  .right-side {
+    position: absolute;
+    width: auto;
+    right: 100px;
+  }
+
+  #header-container.header-style-2 .right-side .header-widget,
+  .right-side .header-widget {
+    padding-top: 3px;
+    border-top: none;
+  }
+}
+
+@media (max-width: 570px) {
+  #header-container.header-style-2 .right-side,
+  .right-side {
+    right: 85px;
+  }
+
+  .user-menu .user-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 0;
+  }
+
+  .user-menu ul {
+    left: -100px;
+  }
+
+  .user-name span img {
+    box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+  }
+}
+
+@media (max-width: 480px) {
+  .user-menu {
+    margin-top: 9px;
+  }
+}
+
+@media (max-width: 380px) {
+  .user-name span img {
+    top: 0;
+  }
+  .user-name span:after {
+    bottom: 0;
+  }
+}
+
 
 /*
  * Trip list
