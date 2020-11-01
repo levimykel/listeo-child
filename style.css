@@ -34,6 +34,13 @@
 /*
  * Heading & top navigation
  */
+#sign-in-dialog .mfp-close::before {
+  top: -4px;
+}
+#sign-in-dialog .mfp-close::after {
+  top: -5px;
+}
+
 @media (max-width: 1239px) and (min-width: 1025px) {
   .left-side {
     width: 65%;
@@ -96,6 +103,18 @@
 @media (max-width: 480px) {
   .user-menu {
     margin-top: 9px;
+  }
+  .user_not_logged_in .header-widget .sign-in {
+    top: 6px;
+  }
+}
+
+@media (max-width: 420px) {
+  .user_not_logged_in #header-container.header-style-2 .right-side,
+  .user_not_logged_in .right-side {
+    position: relative;
+    right: 0;
+    margin-bottom: 0;
   }
 }
 
