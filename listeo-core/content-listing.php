@@ -14,7 +14,18 @@ if (!function_exists('listeo_core_is_instant_booking')) {
 $template_loader = new Listeo_Core_Template_Loader; 
 $is_featured = listeo_core_is_featured($post->ID);
 $is_instant = listeo_core_is_instant_booking($post->ID);
-$listing_type = get_post_meta( $post->ID,'_listing_type',true ); 
+$listing_type = get_post_meta( $post->ID,'_listing_type',true );
+
+
+$variable_trip_start_date_string = get_post_meta($post->ID, '_variable_trip_start_date',false);	
+$is_variable_trip_start_date = false;
+if ($variable_trip_start_date_string[0] == 'on') {
+	$is_variable_trip_start_date = true;
+}
+
+// echo "<pre>";
+// var_dump($variable_trip_start_date_string);
+// echo "</pre>";
 
 ?>
 <!-- Listing Item -->
@@ -109,6 +120,14 @@ $listing_type = get_post_meta( $post->ID,'_listing_type',true );
 											<div class="listing-small-badge"><i class="fa fa-calendar-check-o"></i><?php echo esc_html(date($date_format, strtotime($_event_date[0]))); ?></div> <br>
 										<?php endif; 
 									}
+
+									// LEVI - Added this to show if a trip has a variable start date
+									if ($is_variable_trip_start_date) {
+										?>
+										<div class="listing-small-badge"><i class="fa fa-calendar-check-o"></i>Trip Start Date Variable</div> <br>
+										<?php
+									}
+
 								}  ?>
 							<?php if($listing_type  == 'event' || get_the_listing_price_range() ) : ?>
 								</div>

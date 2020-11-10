@@ -29,14 +29,26 @@ $output = '';
 <?php 
 if(isset($details_list['fields'])) :
 	foreach ($details_list['fields'] as $detail => $value) {
-
+        
+		// LEVI - I can use this to explore the data structure of the fields
+		// echo "<pre>";
+		// var_dump($value['id']);
+		// var_dump(get_post_meta($post->ID, '_variable_trip_start_date',false));
+		// echo "</pre>";
+		
 		if( in_array($value['type'], array('select_multiple','multicheck_split','multicheck')) ) {
 			$meta_value = get_post_meta($post->ID, $value['id'],false);	
 		} else {
 			$meta_value = get_post_meta($post->ID, $value['id'],true);	
 		};
-	
-		if($meta_value == 'check_on' || $meta_value == 'on') {
+		
+		// LEVI - Add variable trip start date
+		if ($value['id'] == '_variable_trip_start_date') {
+			if (get_post_meta($post->ID, '_variable_trip_start_date',false)[0] == 'on') {
+				$output .= '<li class="main-detail-'.$value['id'].'">Variable Trip Start Date</li>';
+			}
+
+		} else if($meta_value == 'check_on' || $meta_value == 'on') {
 			$output .= '<li class="checkboxed single-property-detail-'.$value['id'].'">'. $value['name'].'</li>';	
 		} else {
 			if(!empty($meta_value)){
