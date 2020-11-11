@@ -2,6 +2,7 @@
 <?php 
 $type = get_post_meta($post->ID, '_listing_type',true);
 $custom_fields = Listeo_Core_Meta_Boxes::meta_boxes_custom();
+$highlights = get_post_meta($post->ID, '_highlights', false);
 
 $general_sustainability_practices = $custom_fields['fields']['_general_sustainability_practices'];
 $economic_sustainability_practices = $custom_fields['fields']['_economic_sustainability_practices'];
@@ -45,11 +46,15 @@ endif;
 <!-- Sustainability -->
 <div id="sustainability" class="listing-section">
 	<h3 class="listing-desc-headline margin-top-60 margin-bottom-30"><?php esc_html_e('Sustainability','listeo_core'); ?></h3>
+  <div style="margin: 30px 0">
+    <?php echo wpautop($highlights[0]); ?>
+  </div>
+
   <?php echo $output; ?>
 
   <?php 
     // echo "<pre>";
-    // var_dump($sustainability_fields);
+    // var_dump($highlights);
     // echo "</pre>";
   ?>
 </div>
