@@ -4,20 +4,32 @@ $type = get_post_meta($post->ID, '_listing_type',true);
 $custom_fields = Listeo_Core_Meta_Boxes::meta_boxes_custom();
 $highlights = get_post_meta($post->ID, '_highlights', false);
 
+// $general_sustainability_practices = $custom_fields['fields']['_general_sustainability_practices'];
+// $environmental_nature_sustainability_practices = $custom_fields['fields']['_environmental_nature_sustainability_practices'];
+// $environmental_climate_change_sustainability_practices = $custom_fields['fields']['_environmental_climate_change_sustainability_practices'];
+// $environmental_waste_sustainability_practices = $custom_fields['fields']['_environmental_waste_sustainability_practices'];
+// $environmental_accommodation_sustainability_practices = $custom_fields['fields']['_environmental_accommodation_sustainability_practices'];
+// $economic_sustainability_practices = $custom_fields['fields']['_economic_sustainability_practices'];
+// $social_sustainability_practices = $custom_fields['fields']['_social_sustainability_practices'];
+
+// $sustainability_fields = [
+//   $general_sustainability_practices,
+//   $environmental_nature_sustainability_practices,
+//   $environmental_climate_change_sustainability_practices,
+//   $environmental_waste_sustainability_practices,
+//   $environmental_accommodation_sustainability_practices,
+//   $economic_sustainability_practices,
+//   $social_sustainability_practices
+// ];
+
 $general_sustainability_practices = $custom_fields['fields']['_general_sustainability_practices'];
-$environmental_nature_sustainability_practices = $custom_fields['fields']['_environmental_nature_sustainability_practices'];
-$environmental_climate_change_sustainability_practices = $custom_fields['fields']['_environmental_climate_change_sustainability_practices'];
-$environmental_waste_sustainability_practices = $custom_fields['fields']['_environmental_waste_sustainability_practices'];
-$environmental_accommodation_sustainability_practices = $custom_fields['fields']['_environmental_accommodation_sustainability_practices'];
+$environmental_sustainability_practices = $custom_fields['fields']['_environmental_'];
 $economic_sustainability_practices = $custom_fields['fields']['_economic_sustainability_practices'];
 $social_sustainability_practices = $custom_fields['fields']['_social_sustainability_practices'];
 
 $sustainability_fields = [
   $general_sustainability_practices,
-  $environmental_nature_sustainability_practices,
-  $environmental_climate_change_sustainability_practices,
-  $environmental_waste_sustainability_practices,
-  $environmental_accommodation_sustainability_practices,
+  $environmental_sustainability_practices,
   $economic_sustainability_practices,
   $social_sustainability_practices
 ];
@@ -38,7 +50,7 @@ if (!empty($sustainability_fields)) :
           <div class="vc_tta-panel-heading">
             <h4 class="vc_tta-panel-title" data-tab-id="' . $field['id'] . '">
               <a href="#1484910239035-36e56128-7751"  style="padding-left: 0;" data-vc-accordion="" data-vc-container=".vc_tta-container">
-                <span class="vc_tta-title-text">' . $field['name'] . '</span>
+                <u><span class="vc_tta-title-text">' . $field['name'] . '</span></u>
               </a>
             </h4>
           </div>
@@ -98,7 +110,7 @@ endif;
             <div class="vc_tta-panel-heading">
               <h4 class="vc_tta-panel-title" data-tab-id="highlights">
                 <a href="#1484910239035-36e56128-7751" style="padding-left: 0;" data-vc-accordion="" data-vc-container=".vc_tta-container">
-                  <span class="vc_tta-title-text">Highlights</span>
+                  <u><span class="vc_tta-title-text">Highlights</span></u>
                 </a>
               </h4>
             </div>
