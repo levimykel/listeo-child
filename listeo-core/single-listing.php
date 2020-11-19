@@ -181,6 +181,7 @@ else: ?>
 				<!-- Description -->
 	
 				<?php the_content(); ?>
+				<?php $template_loader->get_template_part( 'single-partials/single-listing','extra-details' );  ?>
 
 				<?php $template_loader->get_template_part( 'single-partials/single-listing','socials' );  ?>
 				<?php $template_loader->get_template_part( 'single-partials/single-listing','features' );  ?>
