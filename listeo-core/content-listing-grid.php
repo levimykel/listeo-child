@@ -29,7 +29,8 @@ $is_instant = listeo_core_is_instant_booking($post->ID);
                   <div class="listing-small-badge instant-badge"><i class="fa fa-bolt"></i> <?php esc_html_e('Instant Booking','listeo_core'); ?></div>
               <?php } ?>
               <?php if(get_the_listing_price_range()): ?>
-                  <div class="listing-small-badge pricing-badge"><i class="fa fa-<?php echo esc_attr(get_option('listeo_price_filter_icon','tag')); ?>"></i><?php echo get_the_listing_price_range(); ?></div>
+                  <?php // LEVI: Removed the pricing badge ?>
+                  <!-- <div class="listing-small-badge pricing-badge"><i class="fa fa-<?php echo esc_attr(get_option('listeo_price_filter_icon','tag')); ?>"></i><?php echo get_the_listing_price_range(); ?></div> -->
               <?php endif; ?>
               <?php  
               if( $listing_type  == 'event') { 
