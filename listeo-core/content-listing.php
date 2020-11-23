@@ -147,14 +147,18 @@ if ($variable_trip_start_date_string[0] == 'on') {
 							<span class="save listeo_core-bookmark-it like-icon" 
 							data-post_id="<?php echo esc_attr($post->ID); ?>" 
 							data-nonce="<?php echo esc_attr($nonce); ?>" ></span>
-						<?php } else { ?>
-							<a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim">
-								<span class="save like-icon tooltip left"  title="<?php esc_html_e('Login To Bookmark Items','listeo_core'); ?>"   ></span>
-							</a>
 						<?php } ?>
 					<?php } ?>
 				</div>
 			</a>
+ 
+			<?php
+				// LEVI: Have the bookmark button open the login modal
+				if(!is_user_logged_in()){ ?>
+					<a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim">
+						<span class="save like-icon tooltip left"  title="<?php esc_html_e('Login To Bookmark Items','listeo_core'); ?>"   ></span>
+					</a>
+				<?php } ?>
 		</div>
 	</div>
 
