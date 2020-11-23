@@ -4,7 +4,7 @@
  Author:       Levi Gable
  Author URI:   https://github.com/levimykel
  Template:     listeo
- Version:      1.1.5
+ Version:      1.1.6
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  listeochild
@@ -214,6 +214,16 @@
 #titlebar.listing-titlebar span.listing-tag a {
   font-size: 9px;
   line-height: 12px;
+}
+
+#extra-details-tabs .vc_tta-panels p,
+#extra-details-tabs .vc_tta-panels ul,
+#extra-details-tabs .vc_tta-panels ol,
+#sustainability-tabs .vc_tta-panels p,
+#sustainability-tabs .vc_tta-panels ul,
+#sustainability-tabs .vc_tta-panels ol {
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 
