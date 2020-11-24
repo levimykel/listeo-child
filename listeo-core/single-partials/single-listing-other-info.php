@@ -67,17 +67,20 @@ endif;
 ?>
 
 <!-- Extra details tabs -->
-<div id="extra-details-tabs" class="vc_tta-container margin-top-30" data-vc-action="collapse">
-  <div
-    class="vc_general vc_tta vc_tta-tabs vc_tta-color-white vc_tta-style-tabs-style-1 vc_tta-shape-square vc_tta-o-shape-group vc_tta-o-no-fill vc_tta-tabs-position-top vc_tta-controls-align-left">
-    <div class="vc_tta-tabs-container">
-      <ul class="vc_tta-tabs-list">
-        <?php echo $tabs; ?>
-      </ul>
-    </div>
-    <div class="vc_tta-panels-container">
-      <div class="vc_tta-panels">
-        <?php echo $panels; ?>
+<div id="other-info" class="listing-section">
+	<h3 class="listing-desc-headline margin-top-70 margin-bottom-30"><?php esc_html_e('Other Info','listeo_core') ?></h3>
+  <div id="extra-details-tabs" class="vc_tta-container margin-top-30" data-vc-action="collapse">
+    <div
+      class="vc_general vc_tta vc_tta-tabs vc_tta-color-white vc_tta-style-tabs-style-1 vc_tta-shape-square vc_tta-o-shape-group vc_tta-o-no-fill vc_tta-tabs-position-top vc_tta-controls-align-left">
+      <div class="vc_tta-tabs-container">
+        <ul class="vc_tta-tabs-list">
+          <?php echo $tabs; ?>
+        </ul>
+      </div>
+      <div class="vc_tta-panels-container">
+        <div class="vc_tta-panels">
+          <?php echo $panels; ?>
+        </div>
       </div>
     </div>
   </div>

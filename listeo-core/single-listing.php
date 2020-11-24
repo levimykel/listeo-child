@@ -121,30 +121,32 @@ else: ?>
 			<div id="listing-nav" class="listing-nav-container">
 				<ul class="listing-nav">
 					<li><a href="#listing-overview" class="active"><?php esc_html_e('Overview','listeo_core'); ?></a></li>
-					<?php if($count_gallery > 0 && $gallery_style == 'content') : ?><li><a href="#listing-gallery"><?php esc_html_e('Gallery','listeo_core'); ?></a></li>
-					<?php endif; 
-					$_menu = get_post_meta( get_the_ID(), '_menu_status', 1 ); 
+          <li><a href="#itinerary"><?php esc_html_e('Itinerary','listeo_core'); ?></a></li>
+          <li><a href="#sustainability"><?php esc_html_e('Sustainability','listeo_core'); ?></a></li>
 
-					if(!empty($_menu)) {
-						$_bookable_show_menu =  get_post_meta(get_the_ID(), '_hide_pricing_if_bookable',true);
-						if(!$_bookable_show_menu){ ?>
-							<li><a href="#listing-pricing-list"><?php esc_html_e('Pricing','listeo_core'); ?></a></li>
-						<?php } ?>
-						
-					<?php } 
+			 		<?php 
+						$latitude = get_post_meta( $post->ID, '_geolocation_lat', true ); 
+						if(!empty($latitude)) :  ?>
+							<li><a href="#listing-location"><?php esc_html_e('Location','listeo_core'); ?></a></li>
+						<?php endif; 
+
+						$_menu = get_post_meta( get_the_ID(), '_menu_status', 1 );
+						if(!empty($_menu)) {
+							$_bookable_show_menu =  get_post_meta(get_the_ID(), '_hide_pricing_if_bookable',true);
+							if(!$_bookable_show_menu){ ?>
+								<li><a href="#listing-pricing-list"><?php esc_html_e('Pricing','listeo_core'); ?></a></li>
+							<?php } ?>
+						<?php } 
+					?>
+          <li><a href="#other-info"><?php esc_html_e('Other Info','listeo_core'); ?></a></li>
+
+					<?php if($count_gallery > 0 && $gallery_style == 'content') : ?><li><a href="#listing-gallery"><?php esc_html_e('Gallery','listeo_core'); ?></a></li>
+					<?php endif;
 
 					$video = get_post_meta( $post->ID, '_video', true ); 
 					if(!empty($video)) :  ?>
 						<li><a href="#listing-video"><?php esc_html_e('Video','listeo_core'); ?></a></li>
-					<?php endif;
-					$latitude = get_post_meta( $post->ID, '_geolocation_lat', true ); 
-					if(!empty($latitude)) :  ?>
-					<li><a href="#listing-location"><?php esc_html_e('Location','listeo_core'); ?></a></li>
-					<?php 
-          endif;
-          ?>
-          <li><a href="#itinerary"><?php esc_html_e('Itinerary','listeo_core'); ?></a></li>
-          <li><a href="#sustainability"><?php esc_html_e('Sustainability','listeo_core'); ?></a></li>
+					<?php endif; ?>
           <?php
 					if(!get_option('listeo_disable_reviews')){
 						$reviews = get_comments(array(
@@ -181,8 +183,11 @@ else: ?>
 				<!-- Description -->
 	
 				<?php the_content(); ?>
-				<?php $template_loader->get_template_part( 'single-partials/single-listing','extra-details' );  ?>
-
+				<?php $template_loader->get_template_part( 'single-partials/single-listing','itinerary' );  ?>
+				<?php $template_loader->get_template_part( 'single-partials/single-listing','sustainability' );  ?>
+				<?php $template_loader->get_template_part( 'single-partials/single-listing','location' );  ?>
+				<?php $template_loader->get_template_part( 'single-partials/single-listing','pricing' );  ?>
+				<?php $template_loader->get_template_part( 'single-partials/single-listing','other-info' );  ?>
 				<?php $template_loader->get_template_part( 'single-partials/single-listing','socials' );  ?>
 				<?php $template_loader->get_template_part( 'single-partials/single-listing','features' );  ?>
 			</div>
@@ -190,12 +195,8 @@ else: ?>
 			<?php
 			
 			if( $count_gallery > 0 && $gallery_style == 'content') : $template_loader->get_template_part( 'single-partials/single-listing','gallery-content' ); endif; ?>
-			<?php $template_loader->get_template_part( 'single-partials/single-listing','pricing' );  ?>
 			<?php $template_loader->get_template_part( 'single-partials/single-listing','opening' );  ?>
 			<?php $template_loader->get_template_part( 'single-partials/single-listing','video' );  ?>
-			<?php $template_loader->get_template_part( 'single-partials/single-listing','location' );  ?>
-			<?php $template_loader->get_template_part( 'single-partials/single-listing','itinerary' );  ?>
-			<?php $template_loader->get_template_part( 'single-partials/single-listing','sustainability' );  ?>
 			<?php if(!get_option('listeo_disable_reviews')){ 
 				$template_loader->get_template_part( 'single-partials/single-listing','reviews' ); } ?>
 			
