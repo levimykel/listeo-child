@@ -2,18 +2,18 @@
 <?php 
 $custom_fields = Listeo_Core_Meta_Boxes::meta_boxes_custom();
 
-$covid_precautions = $custom_fields['fields']['_covid_precautions'];
+$book_now = $custom_fields['fields']['_book_now'];
 $cancellation_policy = $custom_fields['fields']['_cancellation_policy'];
+$covid_precautions = $custom_fields['fields']['_covid_precautions'];
 $faqs = $custom_fields['fields']['_faqs'];
 $other_trip_info = $custom_fields['fields']['_other_trip_info'];
-$book_now = $custom_fields['fields']['_book_now'];
 
 $tab_fields = [
-  $covid_precautions,
+  $book_now,
   $cancellation_policy,
+  $covid_precautions,
   $faqs,
   $other_trip_info,
-  $book_now,
 ];
 
 $tabs = '';
