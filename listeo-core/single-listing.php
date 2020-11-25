@@ -81,8 +81,10 @@ else: ?>
 						<?php endif; ?>
 					</h2>
 
-					<?php $template_loader->get_template_part( 'single-partials/single-listing','main-details' );  ?>
-					<?php $template_loader->get_template_part( 'single-partials/single-listing','category-bubbles' );  ?>
+					<div class="row">
+						<?php $template_loader->get_template_part( 'single-partials/single-listing','main-details' );  ?>
+						<?php $template_loader->get_template_part( 'single-partials/single-listing','category-bubbles' );  ?>
+					</div>
 
 					<?php
 				if(!get_option('listeo_disable_reviews')){

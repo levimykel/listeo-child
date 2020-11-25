@@ -4,7 +4,7 @@
  Author:       Levi Gable
  Author URI:   https://github.com/levimykel
  Template:     listeo
- Version:      1.1.7
+ Version:      1.1.8
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  listeochild
@@ -179,6 +179,10 @@
 /*
  * Listing page
  */
+ #titlebar.listing-titlebar {
+  padding-bottom: 35px;
+}
+
 .listing-titlebar-title .listing-address {
   margin-left: 10px;
 }
@@ -192,9 +196,9 @@
   font-size: 12px !important;
 }
 
-#titlebar.listing-titlebar .category-bubbles {
+/* #titlebar.listing-titlebar .category-bubbles {
   margin: 10px 0;
-}
+} */
 
 #titlebar.listing-titlebar .category-bubbles .bubble-name {
   font-size: 14px;
@@ -203,8 +207,7 @@
 
 #titlebar.listing-titlebar span.listing-tag {
   top: 0;
-  margin-left: 0;
-  margin-right: 5px;
+  margin: 0 5px 10px 0;
   padding: 5px 12px;
 }
 #titlebar.listing-titlebar span.listing-tag:last-of-type {
@@ -214,6 +217,22 @@
 #titlebar.listing-titlebar span.listing-tag a {
   font-size: 9px;
   line-height: 12px;
+}
+
+@media only screen and (min-width: 992px) {
+  .apartment-details li {
+    padding-left: 0;
+    border: none;
+  }
+
+  #titlebar.listing-titlebar span.listing-tag {
+    padding: 2px 8px;
+  }
+
+  #titlebar.listing-titlebar span.listing-tag a {
+    font-size: 8px;
+    line-height: 11px;
+  }
 }
 
 #extra-details-tabs .vc_tta-panels p,

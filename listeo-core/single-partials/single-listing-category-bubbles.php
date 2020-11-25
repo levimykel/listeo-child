@@ -22,60 +22,62 @@ if ( $terms && ! is_wp_error( $terms ) ) :
 	$categories_list = createCategoriesList($terms, 'listing_category');
 ?>
 
-<div class="category-bubbles">
-	<span class="bubble-name">Category: </span>
-	<?php  echo ( $categories_list ) ?>
-</div>
+<div class="col-md-7">
+	<div class="category-bubbles">
+		<span class="bubble-name">Category: </span>
+		<?php  echo ( $categories_list ) ?>
+	</div>
 
-<?php endif; ?>
+	<?php endif; ?>
 
-<?php
-$listing_type = get_post_meta( get_the_ID(), '_listing_type', true);
-switch ($listing_type) {
-	case 'service':
-		$type_terms = get_the_terms( get_the_ID(), 'service_category' );
-		$taxonomy_name = 'service_category';
-		break;
-	case 'rental':
-		$type_terms = get_the_terms( get_the_ID(), 'rental_category' );
-		$taxonomy_name = 'rental_category';
-		break;
-	case 'event':
-		$type_terms = get_the_terms( get_the_ID(), 'event_category' );
-		$taxonomy_name = 'event_category';
-		$type_terms2 = get_the_terms( get_the_ID(), 'service_category' );
-		$taxonomy_name2 = 'service_category';
-		break;
-	
-	default:
-		# code...
-		break;
-}
+	<?php
+	$listing_type = get_post_meta( get_the_ID(), '_listing_type', true);
+	switch ($listing_type) {
+		case 'service':
+			$type_terms = get_the_terms( get_the_ID(), 'service_category' );
+			$taxonomy_name = 'service_category';
+			break;
+		case 'rental':
+			$type_terms = get_the_terms( get_the_ID(), 'rental_category' );
+			$taxonomy_name = 'rental_category';
+			break;
+		case 'event':
+			$type_terms = get_the_terms( get_the_ID(), 'event_category' );
+			$taxonomy_name = 'event_category';
+			$type_terms2 = get_the_terms( get_the_ID(), 'service_category' );
+			$taxonomy_name2 = 'service_category';
+			break;
+		
+		default:
+			# code...
+			break;
+	}
 
-if( isset($type_terms) ) {
-	if ( $type_terms && ! is_wp_error( $type_terms ) ) : 
-		$categories_list = createCategoriesList($type_terms, $taxonomy_name);
-?>
+	if( isset($type_terms) ) {
+		if ( $type_terms && ! is_wp_error( $type_terms ) ) : 
+			$categories_list = createCategoriesList($type_terms, $taxonomy_name);
+	?>
 
-<div class="category-bubbles">
-	<span class="bubble-name">Theme: </span>
-	<?php  echo ( $categories_list ) ?>
-</div>
+	<div class="category-bubbles">
+		<span class="bubble-name">Theme: </span>
+		<?php  echo ( $categories_list ) ?>
+	</div>
 
-<?php
-	endif;
-}
-?>
+	<?php
+		endif;
+	}
+	?>
 
-<?php
-if( isset($type_terms2) ) {
-	if ( $type_terms2 && ! is_wp_error( $type_terms2 ) ) : 
-		$categories_list = createCategoriesList($type_terms2, $taxonomy_name2);
-?>
+	<?php
+	if( isset($type_terms2) ) {
+		if ( $type_terms2 && ! is_wp_error( $type_terms2 ) ) : 
+			$categories_list = createCategoriesList($type_terms2, $taxonomy_name2);
+	?>
 
-<div class="category-bubbles">
-	<span class="bubble-name">Activity: </span>
-	<?php  echo ( $categories_list ) ?>
+	<div class="category-bubbles">
+		<span class="bubble-name">Activity: </span>
+		<?php  echo ( $categories_list ) ?>
+	</div>
 </div>
 
 <?php

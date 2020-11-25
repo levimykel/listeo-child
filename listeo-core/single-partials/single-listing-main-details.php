@@ -208,7 +208,9 @@ if(isset($details_list['fields'])) :
 	}
 endif;
 if(!empty($output)) : ?>
-<ul class="<?php esc_attr_e($class); ?>">
-	<?php echo $output; ?>
-</ul>
+<div class="col-md-5">
+	<ul class="<?php esc_attr_e($class); ?>">
+		<?php echo $output; ?>
+	</ul>
+</div>
 <?php endif; ?>
