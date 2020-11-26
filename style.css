@@ -4,7 +4,7 @@
  Author:       Levi Gable
  Author URI:   https://github.com/levimykel
  Template:     listeo
- Version:      1.1.8
+ Version:      1.1.9
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  listeochild
@@ -159,6 +159,37 @@
 }
 .testimonial-carousel .slick-slide.slick-active div.testimonial-box {
   color: #696969;
+}
+
+.vc-hoverbox-wrapper.vc-hoverbox-shape--rounded .vc-hoverbox-front {
+  justify-content: start;
+  background-position: center bottom;
+  background-size: 90%;
+  background-repeat: no-repeat;
+}
+
+.vc_column_container:nth-child(even) .vc-hoverbox-wrapper.vc-hoverbox-shape--rounded .vc-hoverbox-front {
+  background-color: #ebebeb;
+}
+
+@media only screen and (max-width: 1199px) {
+  .vc-hoverbox-wrapper.vc-hoverbox-shape--rounded .vc-hoverbox-front {
+    background-position: center 60%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .vc-hoverbox-wrapper.vc-hoverbox-shape--rounded .vc-hoverbox-front {
+    background-size: 25%;
+    background-position: center 80%;
+  }
+}
+
+@media only screen and (max-width: 628px) {
+  .vc-hoverbox-wrapper.vc-hoverbox-shape--rounded .vc-hoverbox-front {
+    background-size: 30%;
+    background-position: center 80%;
+  }
 }
 
 
