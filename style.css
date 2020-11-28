@@ -4,7 +4,7 @@
  Author:       Levi Gable
  Author URI:   https://github.com/levimykel
  Template:     listeo
- Version:      1.1.9
+ Version:      1.1.10
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  listeochild
@@ -278,6 +278,14 @@
 
 
 /*
+ * Blog listing page
+ */
+.blog-page .blog-post.sticky .post-content {
+  background: #fafafa;
+}
+
+
+/*
  * Footer Pages
  */
 .bg-page-article .boldgrid-section .bg-editor-hr-wrap .bg-hr {
@@ -317,4 +325,16 @@ body #footer p {
   margin-bottom: 8px;
   font-size: 13px;
   line-height: 18px;
+}
+
+#footer.dark a:hover {
+  color: #F58E2F;
+}
+
+
+/*
+ * Misc
+ */
+.grecaptcha-badge {
+  visibility: hidden;
 }
