@@ -13,7 +13,7 @@
 
   <?php if(!empty($detailed_itinerary) && !empty($detailed_itinerary[0])): ?>
     <div class="margin-top-30" style="text-align: center;">
-      <a href=<?php echo $detailed_itinerary[0] ?> class="button" target="_blank">Download detailed itinerary & FAQ</a>
+      <a href=<?php echo $detailed_itinerary[0] ?> class="button" target="_blank">Download detailed itinerary</a>
     </div>
   <?php endif; ?>
 
