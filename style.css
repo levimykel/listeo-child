@@ -312,6 +312,19 @@ body .mfp-arrow:active {
 
 
 /*
+ * Contact Us page
+ */
+#post-100 .vc_icon_element {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+#post-100 .vc_icon_element.vc_icon_element-outer .vc_icon_element-inner {
+  width: 35px;
+  height: 35px;
+}
+
+
+/*
  * Blog listing page
  */
 .blog-page .blog-post.sticky .post-content {
