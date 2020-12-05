@@ -33,7 +33,7 @@ if(empty($icon)){
 ?>
 <!-- Location -->
 <div id="listing-location" class="listing-section">
-  <h3 class="listing-desc-headline margin-top-60 margin-bottom-30"><?php esc_html_e('Location','listeo_core'); ?></h3>
+  <h3 class="listing-desc-headline margin-top-60 margin-bottom-30"><?php esc_html_e('📌 Location','listeo_core'); ?></h3>
   <?php echo wpautop($location_information); ?>
 
 	<div id="singleListingMap-container" class="<?php if($disable_address) { echo 'circle-point'; } ?> " >

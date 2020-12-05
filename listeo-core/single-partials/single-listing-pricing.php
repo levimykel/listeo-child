@@ -28,7 +28,7 @@ if(isset($_menu[0]['menu_elements'][0]['name']) && !empty($_menu[0]['menu_elemen
 
 <!-- Food Menu -->
 <div id="listing-pricing-list" class="listing-section">
-	<h3 class="listing-desc-headline margin-top-70 margin-bottom-30"><?php esc_html_e('Pricing','listeo_core') ?></h3>
+	<h3 class="listing-desc-headline margin-top-70 margin-bottom-30"><?php esc_html_e('🏷️ Pricing','listeo_core') ?></h3>
 
 	<?php if($counter>5): ?><div class="show-more"><?php endif; ?>
 		<div class="pricing-list-container">

@@ -90,7 +90,7 @@ endif;
 
 <!-- Sustainability -->
 <div id="sustainability" class="listing-section">
-	<h3 class="listing-desc-headline margin-top-60 margin-bottom-30"><?php esc_html_e('Sustainability','listeo_core'); ?></h3>
+	<h3 class="listing-desc-headline margin-top-60 margin-bottom-30"><?php esc_html_e('🌱 Sustainability','listeo_core'); ?></h3>
 
   <div id="sustainability-tabs" class="vc_tta-container" data-vc-action="collapse">
     <div
