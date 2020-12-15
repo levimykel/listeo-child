@@ -43,7 +43,14 @@ function listeo_child_author_info_box(  ) {
 		if ( ! empty( $display_name ) ) {
 			$author_details .= '<h4>' . $display_name . '</h4>';
 		}
-		$author_details .= '<a href="'. $user_posts .'">'.esc_html__('View all posts by','listeo').' '. $display_name . '</a>';  
+
+		$parsedUrl = parse_url($user_posts);
+		$domain = $parsedUrl['host'];
+		$link_text = $domain === 'yugenearthside.com'
+			? esc_html__('View all posts by','listeo').' '. $display_name
+			: esc_html__('Website','listeo');
+
+		$author_details .= '<a href="'. $user_posts .'">'. $link_text . '</a>';  
 
 		
 		$author_details .= '<p>'.nl2br( $user_description ).'</p>';
@@ -57,6 +64,7 @@ function listeo_child_author_info_box(  ) {
 	}
 	if(!empty($user_description )) {
 		echo '<div class="clearfix"></div><div class="about-author margin-top-20">'.$author_details.'</div><div class="clearfix"></div>';
+		// echo '<pre>' . var_dump($domain) . '</pre>';
 	} 
 }
 // Allow HTML in author bio section 
