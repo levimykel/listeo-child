@@ -110,7 +110,6 @@ $segments = explode('|',$buttons);
 			<select form="listeo_core-search-form" name="listeo_core_order" data-placeholder="<?php esc_attr_e('Default order', 'listeo_core'); ?>" class="chosen-select-no-single orderby" >
 				<option <?php selected($default,'date-desc'); ?> value="date-desc"><?php esc_html_e( 'Newest Listings' , 'listeo_core' ); ?></option>
 				<option <?php selected($default,'date-asc'); ?> value="date-asc"><?php esc_html_e( 'Oldest Listings' , 'listeo_core' ); ?></option>
-				<option <?php selected($default,'featured'); ?> value="featured"><?php esc_html_e( 'Featured' , 'listeo_core' ); ?></option>
 			</select>
 		</div>
 	</div>
