@@ -4,7 +4,7 @@
  Author:       Levi Gable
  Author URI:   https://github.com/levimykel
  Template:     listeo
- Version:      1.1.17
+ Version:      1.1.18
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  listeochild
@@ -321,6 +321,37 @@ body .mfp-arrow:active {
  */
 .dashboard #logo {
   background-color: transparent;
+}
+#edit_user {
+  background: #FFFFFF;
+}
+#edit_user .dashboard-list-box-static:nth-of-type(1) {
+  padding-bottom: 0;
+}
+#edit_user .dashboard-list-box-static:nth-of-type(2) {
+  padding-top: 0;
+}
+#edit_user .submit-section-header,
+#edit_user .my-profile .label-twitter,
+#edit_user .my-profile input.twitter,
+#edit_user .my-profile .label-facebook,
+#edit_user .my-profile input.facebook,
+#edit_user .my-profile .label-linkedin,
+#edit_user .my-profile input.linkedin,
+#edit_user .my-profile .label-instagram,
+#edit_user .my-profile input.instagram,
+#edit_user .my-profile .label-youtube,
+#edit_user .my-profile input.youtube,
+#edit_user .my-profile .label-skype,
+#edit_user .my-profile input.skype,
+#edit_user .my-profile .label-whatsapp,
+#edit_user .my-profile input.whatsapp {
+  /* visibility: hidden;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: none; */
+  display: none;
 }
 
 
