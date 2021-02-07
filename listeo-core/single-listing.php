@@ -69,7 +69,7 @@ else: ?>
 			<!-- Titlebar -->
 			<div id="titlebar" class="listing-titlebar">
 				<div class="listing-titlebar-title">
-					<h2>
+					<h1>
 						<?php the_title(); ?>
 						<?php if(get_the_listing_address()): ?>
 							<span>
@@ -79,7 +79,7 @@ else: ?>
 								</a>
 							</span>
 						<?php endif; ?>
-					</h2>
+					</h1>
 
 					<div class="row">
 						<?php $template_loader->get_template_part( 'single-partials/single-listing','main-details' );  ?>
