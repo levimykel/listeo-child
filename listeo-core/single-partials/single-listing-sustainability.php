@@ -46,10 +46,10 @@ if (!empty($sustainability_fields)) :
         data-vc-container=".vc_tta"><span class="vc_tta-title-text">' . $field['name'] . '</span></a></li>';
 
       $panels .= '
-        <div class="vc_tta-panel" data-panel-id="' . $field['id'] . '" data-vc-content=".vc_tta-panel-body">
+        <div id="' . $field['id'] . '" class="vc_tta-panel" data-panel-id="' . $field['id'] . '" data-vc-content=".vc_tta-panel-body">
           <div class="vc_tta-panel-heading">
             <h4 class="vc_tta-panel-title" data-tab-id="' . $field['id'] . '">
-              <a href="#1484910239035-36e56128-7751"  style="padding-left: 0;" data-vc-accordion="" data-vc-container=".vc_tta-container">
+              <a href="#' . $field['id'] . '"  style="padding-left: 0;" data-vc-accordion="" data-vc-container=".vc_tta-container">
                 <u><span class="vc_tta-title-text">' . $field['name'] . '</span></u>
               </a>
             </h4>
@@ -128,13 +128,15 @@ endif;
   <script>
     jQuery( document ).ready(function() {
       jQuery("#sustainability-tabs .vc_tta-tab, #sustainability-tabs .vc_tta-panel-title").click(function(event){
-        event.preventDefault();
+        if (jQuery(window).width() > 767) {
+          event.preventDefault();
+        }
         jQuery("#sustainability-tabs .vc_tta-tab").removeClass("vc_active");
         jQuery(this).addClass("vc_active");
 
         const newPanelId = jQuery(this).attr('data-tab-id');
         jQuery("#sustainability-tabs .vc_tta-panel.vc_active").removeClass("vc_active");
-        jQuery("#sustainability-tabs .vc_tta-panel[data-panel-id='" + newPanelId + "']").addClass("vc_active");
+        jQuery("#sustainability-tabs .vc_tta-panel[data-panel-id='" + newPanelId + "']").addClass("vc_active").delay( 1000 );
       });
     });
   </script>
