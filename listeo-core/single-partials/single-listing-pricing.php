@@ -1,6 +1,7 @@
 <?php
 $custom_fields = Listeo_Core_Meta_Boxes::meta_boxes_custom();
 $inclusions_exclusions = get_post_meta($post->ID, '_inclusions_exclusions', false);
+$pricing_info = get_post_meta($post->ID, '_pricing_info', false);
 	
 $_menu = get_post_meta(get_the_ID(), '_menu_status',true);
 if(!$_menu){
@@ -24,12 +25,17 @@ foreach ($_menu as $menu) {
 	endif;
 }
 
-if(isset($_menu[0]['menu_elements'][0]['name']) && !empty($_menu[0]['menu_elements'][0]['name'])) { ?>
+?>
 
 <!-- Food Menu -->
 <div id="listing-pricing-list" class="listing-section">
 	<h3 class="listing-desc-headline margin-top-70 margin-bottom-30"><?php esc_html_e('🏷️ Pricing','listeo_core') ?></h3>
 
+	<div class="pricing-info">
+		<?php echo wpautop($pricing_info[0]); ?>
+	</div>
+
+	<?php if(isset($_menu[0]['menu_elements'][0]['name']) && !empty($_menu[0]['menu_elements'][0]['name'])) { ?>
 	<?php if($counter>5): ?><div class="show-more"><?php endif; ?>
 		<div class="pricing-list-container">
 			
@@ -83,11 +89,12 @@ if(isset($_menu[0]['menu_elements'][0]['name']) && !empty($_menu[0]['menu_elemen
       <a href=<?php echo $inclusions_exclusions[0] ?> class="button" target="_blank">Download full list of price inclusions & exclusions</a>
     </div>
   <?php endif; ?>
-
-  <?php 
-    // echo "<pre>";
-    // var_dump($inclusions_exclusions);
-    // echo "</pre>";
-  ?>
+	<?php } ?>
 </div>
-<?php } ?>
+
+<?php 
+	// echo "<pre>";
+	// echo "pricing_info:\n";
+	// var_dump($pricing_info);
+	// echo "</pre>";
+?>
