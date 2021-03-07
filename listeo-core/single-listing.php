@@ -185,13 +185,13 @@ else: ?>
 				<!-- Description -->
 	
 				<?php the_content(); ?>
+				<?php $template_loader->get_template_part( 'single-partials/single-listing','features' );  ?>
 				<?php $template_loader->get_template_part( 'single-partials/single-listing','itinerary' );  ?>
 				<?php $template_loader->get_template_part( 'single-partials/single-listing','sustainability' );  ?>
 				<?php $template_loader->get_template_part( 'single-partials/single-listing','location' );  ?>
 				<?php $template_loader->get_template_part( 'single-partials/single-listing','pricing' );  ?>
 				<?php $template_loader->get_template_part( 'single-partials/single-listing','other-info' );  ?>
 				<?php $template_loader->get_template_part( 'single-partials/single-listing','socials' );  ?>
-				<?php $template_loader->get_template_part( 'single-partials/single-listing','features' );  ?>
 			</div>
 
 			<?php
