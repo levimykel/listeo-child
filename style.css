@@ -4,7 +4,7 @@
  Author:       Levi Gable
  Author URI:   https://github.com/levimykel
  Template:     listeo
- Version:      1.1.28
+ Version:      1.1.29
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  listeochild
@@ -205,6 +205,18 @@
 /*
  * Trip list
  */
+.archive #titlebar .page-title,
+.archive #titlebar span,
+.archive #titlebar p {
+  max-width: 816px;
+}
+@media only screen and (min-width: 769px) and (max-width: 1199px) {
+  .archive #titlebar span,
+  .archive #titlebar p {
+    max-width: 584px;
+  }
+}
+
 .listing-item-container {
   height: initial;
 }
