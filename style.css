@@ -4,12 +4,11 @@
  Author:       Levi Gable
  Author URI:   https://github.com/levimykel
  Template:     listeo
- Version:      1.1.32
+ Version:      1.1.33
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  listeochild
 */
-
 
 /*
  * WP Admin Bar
@@ -29,7 +28,6 @@
     position: fixed;
   }
 }
-
 
 /*
  * Heading & top navigation
@@ -100,7 +98,7 @@
   }
 
   .user-name span img {
-    box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -177,7 +175,9 @@
   background-repeat: no-repeat;
 }
 
-.vc_column_container:nth-child(even) .vc-hoverbox-wrapper.vc-hoverbox-shape--rounded .vc-hoverbox-front {
+.vc_column_container:nth-child(even)
+  .vc-hoverbox-wrapper.vc-hoverbox-shape--rounded
+  .vc-hoverbox-front {
   background-color: #ebebeb;
 }
 
@@ -200,7 +200,6 @@
     background-position: center 80%;
   }
 }
-
 
 /*
  * Trip list
@@ -242,7 +241,6 @@
   margin: 20px 0 30px;
   padding: 0 10px;
 }
-
 
 /*
  * Listing page
@@ -355,7 +353,6 @@ body .mfp-arrow:active {
   line-height: 1.6;
 }
 
-
 /*
  * Dashboard
  */
@@ -363,7 +360,7 @@ body .mfp-arrow:active {
   background-color: transparent;
 }
 #edit_user {
-  background: #FFFFFF;
+  background: #ffffff;
 }
 #edit_user .dashboard-list-box-static:nth-of-type(1) {
   padding-bottom: 0;
@@ -394,7 +391,6 @@ body .mfp-arrow:active {
   display: none;
 }
 
-
 /*
  * Contact Us page
  */
@@ -416,7 +412,6 @@ body .mfp-arrow:active {
   width: auto;
   height: auto;
 }
-
 
 /*
  * Blog listing page
@@ -447,17 +442,17 @@ body .mfp-arrow:active {
 /*
  * Shop pages
  */
- .post-type-archive-product #titlebar,
- .single-product #titlebar,
- .archive.tax-product_cat #titlebar {
-   display: none;
- }
-   
- .post-type-archive-product .product-categories li.cat-item.cat-item-25,
- .single-product .product-categories li.cat-item.cat-item-25,
- .archive.tax-product_cat .product-categories li.cat-item.cat-item-25 {
-   display: none;
- }
+.post-type-archive-product #titlebar,
+.single-product #titlebar,
+.archive.tax-product_cat #titlebar {
+  display: none;
+}
+
+.post-type-archive-product .product-categories li.cat-item.cat-item-25,
+.single-product .product-categories li.cat-item.cat-item-25,
+.archive.tax-product_cat .product-categories li.cat-item.cat-item-25 {
+  display: none;
+}
 
 /*
  * Footer Pages
@@ -469,7 +464,6 @@ body .mfp-arrow:active {
 .bg-blockquote::before {
   content: none;
 }
-
 
 /*
  * Footer
@@ -502,9 +496,8 @@ body #footer p {
 }
 
 #footer.dark a:hover {
-  color: #F58E2F;
+  color: #f58e2f;
 }
-
 
 /*
  * 404 Page
@@ -519,11 +512,11 @@ body #footer p {
 }
 #not-found h1 {
   font-size: 60px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 #not-found p,
 .page-404 p {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 #not-found .button {
   margin: 0 auto;
@@ -537,7 +530,6 @@ body #footer p {
     min-height: 650px;
   }
 }
-
 
 /*
  * Misc
